@@ -35,7 +35,6 @@ function main() {
     let posicion = lista.buscar(80);
     console.log(`\nEl valor 80 se encuentra en la posición: ${posicion}`);
 
-
     // Buscar el valor 88 e imprimir en qué posición se encuentra
     posicion = lista.buscar(88);
     console.log(`\nEl valor 88 se encuentra en la posición: ${posicion}`);
