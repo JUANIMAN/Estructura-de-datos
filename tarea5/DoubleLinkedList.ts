@@ -107,7 +107,7 @@ export class DoubleLinkedList<T> {
             this.tail = null;
         } else {
             this.head = this.head!.getSiguiente();
-            this.head!.setAnterior(new NodoDoble());
+            this.head!.setAnterior(null);
         }
         this.length--;
     }
@@ -124,7 +124,7 @@ export class DoubleLinkedList<T> {
             this.tail = null;
         } else {
             this.tail = this.tail!.getAnterior();
-            this.tail!.setSiguiente(new NodoDoble());
+            this.tail!.setSiguiente(null);
         }
         this.length--;
     }

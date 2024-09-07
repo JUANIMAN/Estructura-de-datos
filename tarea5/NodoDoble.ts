@@ -36,7 +36,7 @@ export class NodoDoble<T> {
     /**
      * setSiguiente
      */
-    public setSiguiente(siguiente: NodoDoble<T>): void {
+    public setSiguiente(siguiente: NodoDoble<T> | null): void {
         this.siguiente = siguiente;
     }
 
@@ -50,7 +50,7 @@ export class NodoDoble<T> {
     /**
      * setAnterior
      */
-    public setAnterior(anterior: NodoDoble<T>): void {
+    public setAnterior(anterior: NodoDoble<T> | null): void {
         this.anterior = anterior;
     }
 
