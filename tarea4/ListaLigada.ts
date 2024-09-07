@@ -67,10 +67,10 @@ export class ListaLigada<T> {
         }
     }
 
-    public eliminarElFinal(): void {
-        if (this.head === null) return;
-        let aux = this.head;
-        while (aux.getSiguiente()?.getSiguiente() !== null) {
+    public eliminarElUltimo(): void {
+        let aux: Nodo<T> | null = this.head;
+        if (aux === null) return;
+        while (aux.getSiguiente() !== null) {
             aux = aux.getSiguiente()!;
         }
         aux.setSiguiente(null);
@@ -88,7 +88,7 @@ export class ListaLigada<T> {
             for (let i = 0; i < posicion - 1; i++) {
                 aux = aux.getSiguiente()!;
             }
-            aux.setSiguiente(aux.getSiguiente()!.getSiguiente());
+            aux.setSiguiente(aux.getSiguiente()?.getSiguiente()!);
             this.tamano--;
         }
     }
