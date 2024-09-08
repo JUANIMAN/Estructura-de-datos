@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Vida de Conway</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Juego de la Vida de Conway</h1>
+
+        <div id="game-area">
+            <div id="grid-container">
+                <div id="grid"></div>
+            </div>
+            <div id="sidebar">
+                <div class="control-group">
+                    <h2>Controles</h2>
+                    <button id="start-stop" class="primary-btn">Iniciar</button>
+                    <button id="next-gen" class="secondary-btn">Siguiente Generación</button>
+                    <button id="clear" class="secondary-btn">Limpiar</button>
+                    <button id="randomize" class="secondary-btn">Aleatorio</button>
+                </div>
+
+                <div class="control-group">
+                    <h2>Velocidad</h2>
+                    <div class="slider-container">
+                        <input type="range" id="speed" min="50" max="1000" value="200" step="50">
+                        <span id="speed-value">200 ms</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h2>Tamaño de la cuadrícula</h2>
+                    <div class="input-group">
+                        <input type="number" id="grid-size" min="10" max="100" value="30">
+                        <button id="resize" class="secondary-btn">Cambiar</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <h2>Patrones</h2>
+                    <button id="glider" class="pattern-btn">Glider</button>
+                    <button id="gosper-glider-gun" class="pattern-btn">Gosper Glider Gun</button>
+                </div>
+
+                <div class="control-group">
+                    <h2>Estadísticas</h2>
+                    <p>Generación: <span id="generation">0</span></p>
+                    <p>Células vivas: <span id="alive-cells">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./dist/game.js" type="module"></script>
+</body>
+
+</html>
