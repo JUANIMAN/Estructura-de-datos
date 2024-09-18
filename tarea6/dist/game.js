@@ -146,14 +146,17 @@ function clear() {
 
 function randomize() {
     game.randomize();
+    generation = 0;
     updateGrid();
+    stopSimulation();
 }
 
 function resizeGrid() {
     const newSize = parseInt(gridSizeInput.value);
-    if (newSize >= 10 && newSize <= 100) {
+    if (newSize >= 10 && newSize <= 100 && newSize !== GRID_ROWS && newSize !== GRID_COLS) {
         GRID_ROWS = GRID_COLS = newSize;
         initializeGame();
+        stopSimulation();
     }
 }
 
