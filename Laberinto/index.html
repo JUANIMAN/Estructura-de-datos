@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulación de LaberintoSolver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Simulación de LaberintoSolver</h1>
+        </header>
+        <div id="game-area">
+            <div id="laberinto-container">
+                <div id="laberinto"></div>
+            </div>
+            <div id="sidebar">
+                <div class="control-group">
+                    <h2>Controles</h2>
+                    <button id="iniciar" class="btn primary-btn">Iniciar</button>
+                    <button id="paso" class="btn secondary-btn">Siguiente</button>
+                    <button id="reiniciar" class="btn secondary-btn">Reiniciar</button>
+                </div>
+                <div class="control-group">
+                    <h2>Velocidad</h2>
+                    <div class="slider-container">
+                        <input type="range" id="velocidad" min="50" max="1000" step="50" value="200">
+                        <span id="velocidad-valor">200 ms</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h2>Estadísticas</h2>
+                    <div class="stat-item">
+                        <span class="stat-label">Pasos:</span>
+                        <span id="pasos" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Estado:</span>
+                        <span id="estado" class="stat-value">No iniciado</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <h2>Pila</h2>
+                    <div id="pila" class="pila"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./dist/Simulacion.js"></script>
+</body>
+</html>
