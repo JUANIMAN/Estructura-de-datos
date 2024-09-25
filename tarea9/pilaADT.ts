@@ -29,29 +29,18 @@ export class PilaADT<E> {
 
     public toString(): string {
         if (this.estaVacia()) {
-            return "PilaADT: [ ]";
+            return "";
         }
 
-        let result = "PilaADT: [ ";
+        let result = "";
         let current = this.datos.getPrimero();
         let index = 0;
 
         while (current !== null) {
             result += current?.toString();
-            if (index === 0) {
-                result += " (Tope)";
-            }
-            if (index === this.longitud() - 1) {
-                result += " (Base)";
-            }
-            if (index < this.longitud() - 1) {
-                result += " | ";
-            }
             current = this.datos.obtener(index + 1);
             index++;
         }
-
-        result += " ]";
         return result;
     }
 }
