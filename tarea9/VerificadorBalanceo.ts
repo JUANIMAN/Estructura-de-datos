@@ -13,32 +13,43 @@ export class VerificadorBalanceo {
         return (apertura === '(' && cierre === ')') || (apertura === '{' && cierre === '}');
     }
 
-    public static verificarBalanceo(texto: string): { balanceado: boolean, pasos: PilaADT<String> } {
+    private static obtenerEsperado(apertura: string): string {
+        let esperado = '';
+        switch (apertura) {
+            case '(': esperado = ')'; break;
+            case '{': esperado = '}'; break;
+        }
+        return esperado;
+    }
+
+    public static verificarBalanceo(texto: string): boolean  {
         const pila = new PilaADT<string>();
-        const pasos = new PilaADT<String>();
 
         for (let i = 0; i < texto.length; i++) {
             const caracter = texto[i];
             if (this.esApertura(caracter)) {
                 pila.push(caracter);
-                pasos.push(`Caracter ${i}: '${caracter}' - Añadido a la pila. Pila actual: ${pila}`)
+                console.log(`Caracter ${i}: '${caracter}' - Añadido a la pila. Pila actual: ${pila}`);
             } else if (this.esCierre(caracter)) {
                 if (pila.estaVacia()) {
-                    pasos.push(`Caracter ${i}: '${caracter}' - Error: No se esperaba un '${caracter}'. Pila vacía.`);
-                    return { balanceado: false, pasos };
+                    console.log(`Caracter ${i}: '${caracter}' - Error: No se esperaba un '${caracter}'. Pila vacía.`);
+                    return false;
                 }
                 const ultimaApertura = pila.pop();
                 if (!this.coinciden(ultimaApertura!, caracter)) {
-                    pasos.push(`Caracter ${i}: '${caracter}' - Error: Se esperaba un '${ultimaApertura}'. Pila actual: ${pila}`);
-                    return { balanceado: false, pasos };
+                    console.log(`Caracter ${i}: '${caracter}' - Error: No coincide con la última apertura '${ultimaApertura}'. ${pila}`);
+                    return false;
                 }
-                pasos.push(`Caracter ${i}: '${caracter}' - Coincide con '${ultimaApertura}'. Removido de la pila. Pila actual: ${pila}`);
+                console.log(`Caracter ${i}: '${caracter}' - Coincide con '${ultimaApertura}'. Removido de la pila. Pila actual: ${pila}`);
             }
         }
 
-        const balanceado = pila.estaVacia();
-        pasos.push(`Verificación completada. Pila final: ${pila}. ${balanceado ? 'Balanceado' : 'No balanceado'}`);
+        if (!pila.estaVacia()) {
+            const esperado = this.obtenerEsperado(pila.peek()!);
+            console.log(`Error: Se esperaba un '${esperado}'`);
+            return false
+        }
 
-        return { balanceado, pasos };
+        return pila.estaVacia();
     }
 }

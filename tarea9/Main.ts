@@ -19,11 +19,9 @@ async function main() {
         const contenidoPrograma = await leerArchivo(rutaArchivo);
         
         if (contenidoPrograma) {
-            const { balanceado, pasos } = VerificadorBalanceo.verificarBalanceo(contenidoPrograma);
             console.log(`Archivo: "${rutaArchivo}"`);
-            console.log("Pasos de verificación:");
-            console.log(pasos.toString())
-            console.log(`\nResultado final: ${balanceado ? 'Balanceado' : 'No balanceado'}`);
+            const balanceado = VerificadorBalanceo.verificarBalanceo(contenidoPrograma);
+            console.log(`Resultado final: ${balanceado ? 'Balanceado' : 'No balanceado'}`);
         } else {
             console.log("No se pudo leer el contenido del archivo.");
         }
