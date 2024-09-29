@@ -17,9 +17,9 @@ function main() {
     console.log(head2.getSiguiente()?.getSiguiente()?.getSiguiente()!.getDato());
 
     let aux: Nodo<number> | null = head2;
-    let cadena = "|"
+    let cadena = "|";
     while (aux !== null) {
-        cadena += `${aux.getDato()}| -> |`
+        cadena += `${aux.getDato()}| -> |`;
         aux = aux.getSiguiente();
     }
     console.log(cadena + "null|");
@@ -28,12 +28,12 @@ function main() {
 
 function printList(head: Nodo<number>): string {
     let aux: Nodo<number> | null = head;
-    let cadena = "|"
+    let cadena = "|";
     while (aux !== null) {
         cadena += `${aux.getDato()}| -> |`;
         aux = aux.getSiguiente();
     }
-    cadena += "null|"
+    cadena += "null|";
     return cadena;
 }
 

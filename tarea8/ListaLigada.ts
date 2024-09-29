@@ -123,13 +123,14 @@ export class ListaLigada<T> {
         }
     }
 
-    public transversal(): void {
+    public transversal(): string {
         let aux = this.head;
-        process.stdout.write("|");
+        let cadena = "|";
         while (aux !== null) {
-            process.stdout.write(`${aux.getDato()}| -> |`);
+            cadena += `${aux.getDato()}| -> |`;
             aux = aux.getSiguiente()!;
         }
-        console.log("null|");
+        cadena += "null|";
+        return cadena;
     }
 }
