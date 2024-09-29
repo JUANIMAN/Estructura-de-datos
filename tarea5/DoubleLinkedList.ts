@@ -11,9 +11,6 @@ export class DoubleLinkedList<T> {
         this.length = 0;
     }
 
-    /**
-     * estaVacia
-     */
     public estaVacia(): boolean {
         let resultado = false;
         if (this.head === null && this.tail === null) {
@@ -22,16 +19,10 @@ export class DoubleLinkedList<T> {
         return resultado;
     }
 
-    /**
-     * getLongitud
-     */
     public getLongitud(): number {
         return this.length;
     }
 
-    /**
-     * agregarAlInicio
-     */
     public agregarAlInicio(valor: T): void {
         const nuevoNodo = new NodoDoble<T>(valor);
         if (this.estaVacia()) {
@@ -45,9 +36,6 @@ export class DoubleLinkedList<T> {
         this.length++;
     }
 
-    /**
-     * agregarAlFinal
-     */
     public agregarAlFinal(valor: T): void {
         const nuevoNodo = new NodoDoble<T>(valor);
         if (this.estaVacia()) {
@@ -61,9 +49,6 @@ export class DoubleLinkedList<T> {
         this.length++;
     }
 
-    /**
-     * agregarDespuesDe
-     */
     public agregarDespuesDe(referencia: T, valor: T): void {
         const nuevoNodo = new NodoDoble<T>(valor);
         let aux = this.head;
@@ -71,7 +56,7 @@ export class DoubleLinkedList<T> {
             aux = aux!.getSiguiente();
         }
         if (aux === null) {
-            console.log("Referencia no encontrada");
+            throw new Error("Referencia no encontrada");
         } else {
             nuevoNodo.setSiguiente(aux.getSiguiente()!);
             nuevoNodo.setAnterior(aux);
@@ -81,9 +66,6 @@ export class DoubleLinkedList<T> {
         }
     }
 
-    /**
-     * obtener
-     */
     public obtener(posicion: number): T | null {
         if (posicion < 0 || posicion >= this.length) {
             return null;
@@ -95,9 +77,6 @@ export class DoubleLinkedList<T> {
         return aux!.getDato();
     }
 
-    /**
-     * eliminarElPrimero
-     */
     public eliminarElPrimero(): void {
         if (this.estaVacia()) {
             return;
@@ -112,9 +91,6 @@ export class DoubleLinkedList<T> {
         this.length--;
     }
 
-    /**
-     * eliminarElUltimo
-     */
     public eliminarElUltimo(): void {
         if (this.estaVacia()) {
             return;
@@ -129,9 +105,6 @@ export class DoubleLinkedList<T> {
         this.length--;
     }
 
-    /**
-     * eliminar
-     */
     public eliminar(posicion: number): void {
         if (posicion < 0 || posicion >= this.length) {
             return;
@@ -153,9 +126,6 @@ export class DoubleLinkedList<T> {
         this.length--;
     }
 
-    /**
-     * actualizar
-     */
     public actualizar(aBuscar: T, valor: T): void {
         let aux = this.head;
         while (aux !== null) {
@@ -167,9 +137,6 @@ export class DoubleLinkedList<T> {
         }
     }
 
-    /**
-     * buscar
-     */
     public buscar(valor: T): number {
         let aux = this.head;
         let posicion = 0;
@@ -186,23 +153,24 @@ export class DoubleLinkedList<T> {
     /**
      * transversal @param direccion 0 --> izq a derecha  si es 1 --> derecha a izq
      */
-    public transversal(direccion: number = 0): void {
+    public transversal(direccion: number = 0): string {
+        let aux = this.head;
+        let cadena = "|";
+
         if (direccion === 1) {
-            let aux = this.head;
-            process.stdout.write("|");
             while (aux !== null) {
-                process.stdout.write(`${aux.getDato()}| <-> |`);
+                cadena += `${aux.getDato()}| <-> |`;
                 aux = aux.getAnterior();
             }
-            console.log("null|");
+            cadena += "null|";
+            return cadena;
         } else {
-            let aux = this.head;
-            process.stdout.write("|");
             while (aux !== null) {
-                process.stdout.write(`${aux.getDato()}| <-> |`);
+                cadena += `${aux.getDato()}| <-> |`;
                 aux = aux.getSiguiente();
             }
-            console.log("null|");
+            cadena += "null|";
+            return cadena;
         }
     }
 }

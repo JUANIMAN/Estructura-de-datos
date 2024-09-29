@@ -15,21 +15,21 @@ function main() {
 
     // Imprimir el contenido
     console.log("Contenido inicial:");
-    lista.transversal();
+    console.log(lista.transversal());
 
     // Eliminar el de la posición 2
     lista.eliminar(2);
 
     // Volver a imprimir el contenido
     console.log("\nContenido después de eliminar la posición 2:");
-    lista.transversal();
+    console.log(lista.transversal());
 
     // Actualizar el cuarto elemento a 88
     lista.actualizar(80, 88);
 
     // Volver a imprimir el contenido
     console.log("\nContenido después de actualizar el cuarto elemento a 88:");
-    lista.transversal();
+    console.log(lista.transversal());
 
     // Buscar el valor 80 e imprimir en qué posición se encuentra
     let posicion = lista.buscar(80);
