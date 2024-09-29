@@ -15,14 +15,14 @@ class Main {
 
         // Imprimir el contenido
         console.log("Lista original:");
-        listaSmartPhones.transversal();
+        console.log(listaSmartPhones.transversal());
 
         // Eliminar el de la posición 2
         listaSmartPhones.eliminar(2);
 
         // Volver a imprimir el contenido
         console.log("\nLista después de eliminar el elemento en la posición 2:");
-        listaSmartPhones.transversal();
+        console.log(listaSmartPhones.transversal());
 
         // Actualizar el segundo elemento
         const aBuscar = new SmartPhone("Samsung", "Galaxy S21", 899);
@@ -31,7 +31,7 @@ class Main {
 
         // Volver a imprimir el contenido
         console.log("\nLista después de actualizar el segundo elemento:");
-        listaSmartPhones.transversal();
+        console.log(listaSmartPhones.transversal());
 
         // Agregar un elemento al inicio y otro diferente al final
         listaSmartPhones.agregarAlInicio(new SmartPhone("Huawei", "P40 Pro", 799));
@@ -39,14 +39,14 @@ class Main {
 
         // Volver a imprimir el contenido
         console.log("\nLista después de agregar al inicio y al final:");
-        listaSmartPhones.transversal();
+        console.log(listaSmartPhones.transversal());
 
         // Eliminar el primero
         listaSmartPhones.eliminarElPrimero();
 
         // Volver a imprimir el contenido
         console.log("\nLista final después de eliminar el primer elemento:");
-        listaSmartPhones.transversal();
+        console.log(listaSmartPhones.transversal());
     }
 }
 

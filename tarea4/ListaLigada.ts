@@ -9,31 +9,19 @@ export class ListaLigada<T> {
         this.tamano = 0;
     }
 
-    /**
-     * estaVacia
-     */
     public estaVacia(): boolean {
         return this.head === null;
     }
 
-    /**
-     * getTamano
-     */
     public getTamano(): number {
         return this.tamano;
     }
 
-    /**
-     * agregarAlInicio
-     */
     public agregarAlInicio(dato: T): void {
         this.head = new Nodo<T>(dato, this.head!);
         this.tamano++;
     }
 
-    /**
-     * agregarAlFinal
-     */
     public agregarAlFinal(dato: T): void {
         const nuevoNodo = new Nodo<T>(dato);
         if (this.head === null) {
@@ -117,16 +105,14 @@ export class ListaLigada<T> {
         }
     }
 
-    /**
-     * transversal
-     */
-    public transversal(): void {
+    public transversal(): string {
         let aux = this.head;
-        process.stdout.write("|");
+        let cadena = "|";
         while (aux !== null) {
-            process.stdout.write(`${aux.getDato()}| -> |`);
+            cadena += `${aux.getDato()}| -> |`;
             aux = aux.getSiguiente()!;
         }
-        console.log("null|");
+        cadena += "null|";
+        return cadena;
     }
 }
