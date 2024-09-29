@@ -17,23 +17,24 @@ function main() {
     console.log(head2.getSiguiente()?.getSiguiente()?.getSiguiente()!.getDato());
 
     let aux: Nodo<number> | null = head2;
-    process.stdout.write("|");
+    let cadena = "|"
     while (aux !== null) {
-        process.stdout.write(`${aux.getDato()}| -> |`);
+        cadena += `${aux.getDato()}| -> |`
         aux = aux.getSiguiente();
     }
-    console.log("null|");
+    console.log(cadena + "null|");
     console.log("-----------------------");
 }
 
-function printList(head: Nodo<number>): void {
+function printList(head: Nodo<number>): string {
     let aux: Nodo<number> | null = head;
-    process.stdout.write("|");
+    let cadena = "|"
     while (aux !== null) {
-        process.stdout.write(`${aux.getDato()}| -> |`);
+        cadena += `${aux.getDato()}| -> |`;
         aux = aux.getSiguiente();
     }
-    console.log("null|");
+    cadena += "null|"
+    return cadena;
 }
 
 function practicas() {
@@ -42,14 +43,14 @@ function practicas() {
     head.setSiguiente(new Nodo(200, new Nodo(300, new Nodo(400, new Nodo(600)))));
 
     // Imprimir todo
-    printList(head);
+    console.log(printList(head));
 
     // Cambiar el valor del 3er nodo de 300 a 333
     head.getSiguiente()?.getSiguiente()?.setDato(333);
 
     // Imprimir todo nuevamente
     console.log("\nDespués de cambiar 300 a 333:");
-    printList(head);
+    console.log(printList(head));
 
     // Insertar un nodo 700 después del nodo 600 (Al final)
     let aux: Nodo<number> | null = head;
@@ -60,14 +61,14 @@ function practicas() {
 
     // Imprimir todo nuevamente
     console.log("\nDespués de insertar 700 al final:");
-    printList(head);
+    console.log(printList(head));
 
     // Insertar un nodo con valor 50 al principio (antes del nodo 100)
     head = new Nodo(50, head);
 
     // Imprimir todo nuevamente
     console.log("\nDespués de insertar 50 al principio:");
-    printList(head);
+    console.log(printList(head));
 }
 
 // Ejecutar la función principal
