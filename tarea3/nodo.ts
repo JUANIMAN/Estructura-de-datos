@@ -1,16 +1,13 @@
 export class Nodo<T> {
-    private dato: T;
+    private dato: T | null;
     private siguiente: Nodo<T> | null;
 
-    constructor();
-    constructor(dato: T);
-    constructor(dato: T, siguiente: Nodo<T>);
     constructor(dato?: T, siguiente?: Nodo<T>) {
-        this.dato = dato as T;
+        this.dato = dato || null;
         this.siguiente = siguiente || null;
     }
 
-    public getDato(): T {
+    public getDato(): T | null {
         return this.dato;
     }
 

@@ -3,11 +3,10 @@ import { Nodo } from './nodo';
 function main() {
     const head = new Nodo<number>();
     head.setDato(10);
-
-    head.setSiguiente(new Nodo(20,));
+    head.setSiguiente(new Nodo(20));
+    console.log(head.getSiguiente()?.getDato());
 
     const head2 = new Nodo<number>(10, new Nodo(20, new Nodo(40, new Nodo(50))));
-    console.log(head.getSiguiente()?.getDato());
     console.log(head2.getSiguiente()?.getSiguiente()?.getSiguiente()?.getDato());
     console.log(head2.getSiguiente()?.getSiguiente()?.getDato());
     head2.getSiguiente()?.setDato(30);
