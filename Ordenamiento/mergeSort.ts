@@ -1,4 +1,4 @@
-function mergeSort(data: number[]): number[] {
+function MergeSort(data: number[]): number[] {
     if (data.length > 1) {
         const mitad: number = Math.floor(data.length / 2);
         const izquierda: number[] = data.slice(0, mitad);
@@ -6,8 +6,8 @@ function mergeSort(data: number[]): number[] {
         
         console.log(`${izquierda} --- ${derecha}`);
         
-        mergeSort(izquierda);
-        mergeSort(derecha);
+        MergeSort(izquierda);
+        MergeSort(derecha);
         
         // merge
         let i: number = 0;
@@ -46,4 +46,4 @@ function mergeSort(data: number[]): number[] {
 // Ejemplo de uso
 console.log(".-.-.-.-.-.- MERGE --.-.-.-.-");
 const info: number[] = [38, 27, 43, 3, 9, 82, 10, 19, 50, 61];
-console.log(mergeSort(info));
+console.log(MergeSort(info));
