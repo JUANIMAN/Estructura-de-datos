@@ -1,0 +1,8 @@
+# Repositorio para la materia de Estructura de Datos
+
+## ✨ Proyectos
+
+|  #   | Proyecto         | Descripción                                                              | Código                                                                                                                                                                                   | Website                                                       |
+| --- | ---------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| 1   | **laberinto** | Simulación del algoritmo de backtracking en un laberinto.  | [![GitHub Badge](https://img.shields.io/badge/Código-181717?logo=github&logoColor=fff&style=flat-square)](https://github.com/JUANIMAN/Estructura-de-datos/tree/main/Laberinto) | [![Vercel Badge](https://img.shields.io/badge/Website-000?logo=vercel&logoColor=fff&style=flat-square)](https://laberinto-six.vercel.app/) |
+| 2   | **juego de la vida** | Implementación web del juego de la vida de Conway con un Array2D. | [![GitHub Badge](https://img.shields.io/badge/Código-181717?logo=github&logoColor=fff&style=flat-square)](https://github.com/JUANIMAN/Estructura-de-datos/tree/main/tarea6) | [![Vercel Badge](https://img.shields.io/badge/Website-000?logo=vercel&logoColor=fff&style=flat-square)](https://game-of-life-beige-five.vercel.app/) |
