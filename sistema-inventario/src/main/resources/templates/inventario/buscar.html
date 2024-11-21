@@ -13,7 +13,7 @@
         <h2 class="text-2xl font-bold mb-6">Buscar Producto</h2>
 
         <form th:action="@{/inventario/buscar}" method="get" class="flex gap-4 mb-6">
-            <input type="text" name="id" placeholder="Buscar producto..."
+            <input type="number" name="id" placeholder="Buscar producto por ID..."
                 class="flex-1 p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
                 Buscar
